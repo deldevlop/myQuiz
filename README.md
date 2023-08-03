@@ -5,14 +5,10 @@
 ## Lab 1
 
 ### App Description
-This is an android app which display a question and response for the question. When you chose the wrong response, it is displayed in red and the 
+This is an android app which display a question and response for the question. When you chose the wrong response, it is displayed in red and the coorect in green. There is an icon which also allow to show the response and to hide them
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
-
-<img src="YOUR_GIF_URL_HERE" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
+![MyQuiz-Version1](https://github.com/deldevlop/myQuiz/assets/99396455/9d274e0e-3f4d-4078-bbc1-c041e55d61cf)
 
 ## Required
 - [X] Create New Project in Android Studio
