@@ -13,8 +13,6 @@ import androidx.core.view.isVisible
 
 class MainActivity : AppCompatActivity() {
 
-    var isActive : Boolean = true
-
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
