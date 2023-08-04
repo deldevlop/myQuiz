@@ -19,6 +19,17 @@
         android:elevation="5dp"/>
 
     <TextView
+        android:id="@+id/flashcardAns"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:text="Barack Obama"
+        android:layout_below="@id/flashcardQuestion"
+        android:textSize="44sp"
+        android:visibility="invisible"/>
+
+    <TextView
         android:id="@+id/flashcardAnswer1"
         android:layout_width="match_parent"
         android:layout_height="40dp"

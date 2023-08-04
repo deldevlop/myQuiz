@@ -20,6 +20,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        findViewById<View>(R.id.flashcardAns).setOnClickListener {
+            findViewById<View>(R.id.flashcardAns).visibility = View.INVISIBLE
+            findViewById<View>(R.id.flashcardQuestion).visibility = View.VISIBLE
+        }
+
+        findViewById<View>(R.id.flashcardQuestion).setOnClickListener {
+            findViewById<View>(R.id.flashcardQuestion).visibility = View.INVISIBLE
+            findViewById<View>(R.id.flashcardAns).visibility = View.VISIBLE
+        }
+
         findViewById<View>(R.id.flashcardAnswer1).setOnClickListener{
             findViewById<View>(R.id.flashcardAnswer1).setBackgroundColor(resources.getColor(R.color.red, null))
             findViewById<View>(R.id.flashcardAnswer3).setBackgroundColor(resources.getColor(R.color.green, null))
