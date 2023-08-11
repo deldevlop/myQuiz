@@ -6,7 +6,8 @@
 This is an android app which display a question and response for the question. When you chose the wrong response, it is displayed in red and the coorect in green. There is an icon which also allow to show the response and to hide them
 
 ### App Walk-though
-![MyQuiz-Version1](https://github.com/deldevlop/myQuiz/assets/99396455/9d274e0e-3f4d-4078-bbc1-c041e55d61cf)
+
+![myQuiz_GIF](https://github.com/deldevlop/myQuiz/assets/99396455/982f5346-892c-4bc9-841d-ffec95211cab)
 
 ## Required
 - [X] Create New Project in Android Studio
