@@ -5,4 +5,19 @@
     <color name="red">#B70000</color>
     <color name="green">#098902</color>
     <color name="yellow">#F7FA07</color>
+    <color name='Installing_update_on_smartphone_1'>#032CA6</color>
+    <color name='Installing_update_on_smartphone_2'>#0554F2</color>
+    <color name='Installing_update_on_smartphone_3'>#0339A6</color>
+    <color name='Installing_update_on_smartphone_4'>#BFB7B4</color>
+    <color name='Installing_update_on_smartphone_5'>#0D0D0D</color>
+
+    <color name='color_1'>#243B40</color>
+    <color name='color_2'>#72878C</color>
+    <color name='color_3'>#68F263</color>
+    <color name='color_4'>#5ABF56</color>
+    <color name='color_5'>#0D0D0D</color>
+    <color name='color_6'>#E8FAFF</color>
+    <color name='color_7'>#8AA6A3</color>
+    <color name='color_8'>#127369</color>
+
 </resources>

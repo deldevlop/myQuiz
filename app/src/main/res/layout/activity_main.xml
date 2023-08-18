@@ -4,18 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/color_7">
 
 
     <TextView
         android:id="@+id/flashcardQuestion"
-        android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="Who is the 44th President of the United States?"
+        android:textColor="@color/color_7"
+        android:background="@color/color_1"
         android:textSize="35sp"
-        android:visibility="visible"/>
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/flashcardAnswer"
@@ -23,9 +29,30 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center"
+
         android:text="Barack Obama"
         android:textSize="35sp"
         android:visibility="invisible"/>
+
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="17dp"
+        android:id="@+id/next_button"
+        android:src="@drawable/next_button"
+        android:visibility="visible"
+        />
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="17dp"
+        android:id="@+id/delete_button"
+        android:src="@drawable/delete_button"
+        android:visibility="visible"/>
 
     <ImageView
         android:layout_alignParentRight="true"
@@ -35,6 +62,15 @@
         android:layout_margin="17dp"
         android:id="@+id/add_button"
         android:src="@drawable/add_button"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="17dp"
+        android:id="@+id/edit_button"
+        android:src="@drawable/edit_button"
         android:visibility="visible"/>
 
     <!--part 1-->
