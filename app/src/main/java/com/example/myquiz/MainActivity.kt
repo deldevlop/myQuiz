@@ -1,26 +1,109 @@
 package com.example.myquiz
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Im
 import android.view.View
-import android.widget.ImageButton
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.core.view.isVisible
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-
-    var isActive : Boolean = true
-
+    lateinit var flashcardDatabase: FlashcardDatabase
+    var allFlashcards = mutableListOf<Flashcard>()
+    var currentCardDisplayedIndex = 0
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<View>(R.id.flashcardAns).setOnClickListener {
+        flashcardDatabase = FlashcardDatabase(this)
+        allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+
+        if (allFlashcards.size > 0) {
+            findViewById<TextView>(R.id.flashcardQuestion).text = allFlashcards[0].question
+            findViewById<TextView>(R.id.flashcardAnswer).text = allFlashcards[0].answer
+        }
+
+        findViewById<View>(R.id.flashcardQuestion).setOnClickListener {
+            findViewById<View>(R.id.flashcardQuestion).visibility = View.INVISIBLE
+            findViewById<View>(R.id.flashcardAnswer).visibility = View.VISIBLE
+        }
+
+        findViewById<View>(R.id.flashcardAnswer).setOnClickListener {
+            findViewById<View>(R.id.flashcardQuestion).visibility = View.VISIBLE
+            findViewById<View>(R.id.flashcardAnswer).visibility = View.INVISIBLE
+        }
+
+
+        findViewById<ImageView>(R.id.add_button).setOnClickListener {
+            val intent = Intent(this, AddCardActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        findViewById<ImageView>(R.id.edit_button).setOnClickListener {
+            val questionText = findViewById<TextView>(R.id.flashcardQuestion)
+            val answerText = findViewById<TextView>(R.id.flashcardAnswer)
+
+            val text1 = questionText.text.toString()
+            val text2 = answerText.text.toString()
+            val intent = Intent(this, AddCardActivity::class.java)
+            intent.putExtra("questionText", text1)
+            intent.putExtra("answerText", text2)
+            startActivity(intent)
+        }
+
+        findViewById<ImageView>(R.id.next_button).setOnClickListener {
+            if (allFlashcards.size == 0) {
+                return@setOnClickListener
+            }
+
+            currentCardDisplayedIndex++
+
+            if(currentCardDisplayedIndex >= allFlashcards.size) {
+                Snackbar.make(findViewById<TextView>(R.id.flashcardQuestion), "You've reached the end of the cards, going back to start.", Snackbar.LENGTH_SHORT).show()
+                currentCardDisplayedIndex = 0
+            }
+
+            allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+            val (question, answer) = allFlashcards[currentCardDisplayedIndex]
+
+            findViewById<TextView>(R.id.flashcardAnswer).text = answer
+            findViewById<TextView>(R.id.flashcardQuestion).text = question
+
+        }
+
+        val textView1 = findViewById<TextView>(R.id.flashcardQuestion)
+        val textView2 = findViewById<TextView>(R.id.flashcardAnswer)
+
+        val text1 = intent.getStringExtra("text1")
+        val text2 = intent.getStringExtra("text2")
+        if (!text1.isNullOrBlank() && !text2.isNullOrBlank()) {
+            textView1.text = text1
+            textView2.text = text2
+            flashcardDatabase.insertCard(Flashcard(text1, text2))
+            allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+            Snackbar.make(findViewById(android.R.id.content), "Card Modified Successfully", Snackbar.LENGTH_SHORT).show()
+        }
+
+
+        findViewById<ImageView>(R.id.delete_button).setOnClickListener {
+            val flashcardQuestionToDelete = findViewById<TextView>(R.id.flashcardQuestion).text.toString()
+            flashcardDatabase.deleteCard(flashcardQuestionToDelete)
+            allFlashcards = flashcardDatabase.getAllCards().toMutableList()
+        }
+
+
+
+
+
+
+
+        /*findViewById<View>(R.id.flashcardAns).setOnClickListener {
             findViewById<View>(R.id.flashcardAns).visibility = View.INVISIBLE
             findViewById<View>(R.id.flashcardQuestion).visibility = View.VISIBLE
         }
@@ -55,6 +138,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<View>(R.id.flashcardAnswer1).visibility = View.INVISIBLE
             findViewById<View>(R.id.flashcardAnswer2).visibility = View.INVISIBLE
             findViewById<View>(R.id.flashcardAnswer3).visibility = View.INVISIBLE
-        }
+        }*/
     }
 }
