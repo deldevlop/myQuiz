@@ -50,25 +50,15 @@ class MainActivity : AppCompatActivity() {
 
             val answerSideView = findViewById<View>(R.id.flashcardAnswer)
 
-// get the center for the clipping circle
 
-// get the center for the clipping circle
             val cx = answerSideView.width / 2
             val cy = answerSideView.height / 2
 
-// get the final radius for the clipping circle
 
-// get the final radius for the clipping circle
             val finalRadius = hypot(cx.toDouble(), cy.toDouble()).toFloat()
 
-// create the animator for this view (the start radius is zero)
-
-// create the animator for this view (the start radius is zero)
             val anim = ViewAnimationUtils.createCircularReveal(answerSideView, cx, cy, 0f, finalRadius)
 
-// hide the question and show the answer to prepare for playing the animation!
-
-// hide the question and show the answer to prepare for playing the animation!
             findViewById<View>(R.id.flashcardQuestion).visibility = View.VISIBLE
             findViewById<View>(R.id.flashcardAnswer).visibility = View.INVISIBLE
 
@@ -104,11 +94,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             findViewById<View>(R.id.flashcardQuestion).startAnimation(fadeInAnimation)
-            //findViewById<View>(R.id.flashcardAnswer).startAnimation(fadeInAnimation)
-
-// Maintenant, changez les données affichées pour la prochaine carte comme vous le faisiez auparavant
-            currentCardDisplayedIndex++
-// ... Le reste de votre code pour afficher la prochaine carte
 
             currentCardDisplayedIndex++
 
