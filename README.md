@@ -1,4 +1,25 @@
 ## myQuiz
+## Lab 4
+
+### App Description
+This is an android app which display a question and response for the question. When you click on the question it is automatically set invisible and display the answer. You can do the same for the answer too if you want to see the question. There are two activities in the app, the first display the question and it answer, the second allow to create question and answer by clicking on an add button in the first activity. After creating new question and answer there is a save button which allow to save data and display them in the first activity. There is also an quit buton in the second activity if you want to retutn in the firsst activity without saving your question and it answer.
+In this lab the app is able to save multiple user created cards and users can revisit the app to review their cards. User can also delete an card, sees a transition animation when going from the main screen to the add card screen, sees a reveal animation when the flashcard is tapped and the answer is shown, sees flashcards animating in / out when the 'next' button is tapped.
+
+### App Walk-though
+
+![ezgif com-video-to-gif](https://github.com/deldevlop/myQuiz/assets/99396455/d5dce0f4-e704-4239-91f5-9e45134eb7de)
+
+
+## Required
+- [X] User sees a transition animation when going from the main screen to the add card screen.
+- [X] User sees a reveal animation when the flashcard is tapped and the answer is shown
+- [X] User sees flashcards animating in / out when the 'next' button is tapped
+
+## Optional
+- [X] Extra styling is added!
+- [ ] User sees a countdown timer for each question
+- [ ] User sees a 'card flip' animation when the card is tapped
+- [ ] User sees a celebration animation with confetti when they answer a question correctly
 
 ## Lab 3
 
