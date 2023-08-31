@@ -1,5 +1,26 @@
 ## myQuiz
 
+## Lab 3
+
+### App Description
+This is an android app which display a question and response for the question. When you click on the question it is automatically set invisible and display the answer. You can do the same for the answer too if you want to see the question. There are two activities in the app, the first display the question and it answer, the second allow to create question and answer by clicking on an add button in the first activity. After creating new question and answer there is a save button which allow to save data and display them in the first activity. There is also an quit buton in the second activity if you want to retutn in the firsst activity without saving your question and it answer.
+In this lab the app is able to save multiple user created cards and users can revisit the app to review their cards. User can also delete an card
+### App Walk-though
+https://github.com/deldevlop/myQuiz/assets/99396455/aa8061ea-9a3d-4c4e-bfa9-fa05c838c1e1
+
+
+## Required
+- [X] User can create a card and still see their created card when the app is relaunched.
+- [X] User can create muliple cards and browse through all created cards
+
+## Optional
+- [X] User can delete a card and no longer see it in their deck anymore
+- [ ] Flashcards are shown in random order instead of the order they were created in
+- [X] User can edit a card and see the edit saved when they browse through their deck of cards
+- [ ] User can create flashcards with multiple answers and be able to browse through cards with multiple choice answers shown
+
+
+
 ## Lab 2
 
 ### App Description
